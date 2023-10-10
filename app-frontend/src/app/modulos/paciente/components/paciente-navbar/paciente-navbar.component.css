@@ -1,0 +1,27 @@
+.content {
+  /* padding-top: 8px; */
+  border: 1px solid #dadce0;
+
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  background-color: transparent;
+}
+
+.titulo {
+  font-size: 20px;
+  text-align: center;
+}
+
+.butoes-menu {
+  float: right;
+}
+
+
+.offcanvas{
+  width: fit-content;
+}

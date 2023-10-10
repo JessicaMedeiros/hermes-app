@@ -1,0 +1,107 @@
+<mat-card>
+  <h2 class="titulo">Nova Ocorrência</h2>
+  <mat-card-subtitle class="sub-titulo">Caso queira informar alguam situação de emergência. Acionaremos a nossa equipe o
+    mais rápido possível.</mat-card-subtitle>
+
+  <form [formGroup]="formularioNovaOcorrencia" class="formulario">
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-auto">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Data do ínicio dos sintomas</mat-label>
+            <input matInput class="input" formControlName="data" type="date" required placeholder="Data da remoção">
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-auto">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Hora de ínicio dos sintomas</mat-label>
+            <input matInput class="input" formControlName="hora" type="time" required
+              placeholder="Data de nascimento do paciente">
+            <!-- <mat-error *ngIf="hora.invalid">{{getErrorMessage()}} -->
+            <!-- </mat-error> -->
+          </mat-form-field>
+        </div>
+      </div>
+
+
+      <mat-form-field appearance="outline" hintLabel="Máximo 600 caracteres" class="full-width">
+        <mat-label>Foram aplicados medicamentos? Quais?</mat-label>
+        <textarea matInput cols="40" rows="8" class="input" #input required formControlName="medicamentos"
+          maxlength="600"></textarea>
+        <mat-hint align="end">{{input.value.length || 0}}/600</mat-hint>
+        <!-- <mat-error *ngIf="observacao.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+
+
+      <div class="anexo">
+
+        <h3>Anexe no máximo duas fotos para nos dar mais informação sobre o que está acontecendo</h3>
+        <div class="d-flex justify-content-center">
+          <button mat-button mat-flat-button [color]="corBotao" type="button" id="button-file"
+            (click)="filePicker.click()">
+            <mat-icon>insert_photo</mat-icon>
+            Adicionar arquivos
+          </button>
+        </div>
+
+        <span id="texto_file" style="color: tomato;" *ngIf="messagemTamanhoErrado">
+          {{ messagemTamanhoErrado }}
+        </span>
+        <span id="texto_file" style="color: tomato;" *ngIf="messagemTipoErrado">
+          {{ messagemTipoErrado }}
+        </span>
+        <span id="texto_file" style="color: tomato;" *ngIf="messagemExcedidaQuantidadeMaxDeArquivos">
+          {{ messagemExcedidaQuantidadeMaxDeArquivos }}
+        </span>
+        <input type="file" #filePicker (change)="uploadFile($event)" multiple>
+
+      </div>
+
+      <div class="anexo-arquivos">
+        <h3>Anexos ({{listaFiles2.length}})</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-2">
+          <div class="col" *ngFor="let f of listaFiles2; let i = index">
+            <mat-card class="mat-elevation-z1">
+              <mat-card-header>
+
+
+                <div mat-card-avatar class="header-image"></div>
+                <mat-card-title><h3>{{ f.name }}</h3></mat-card-title>
+                <mat-card-subtitle>Tamanho: {{ f.size }}</mat-card-subtitle>
+
+
+                <button mat-mini-fab color="warn" class="mat-elevation-z0"
+                  aria-label="Remover arquivo da lista de anexos" (click)="removerArquivo(i)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+
+
+              </mat-card-header>
+              <mat-card-content>
+                Última modificação do arquivo: {{f.lastModifiedDate | date: 'dd/MM/yyyy HH:mm'}}.
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+
+
+      <mat-form-field appearance="outline" hintLabel="Máximo 600 caracteres" class="full-width"
+        style="margin-top: 1rem;">
+        <mat-label>Descreva seus sintomas</mat-label>
+        <textarea matInput cols="40" rows="8" class="input" #input required formControlName="observacao"
+          maxlength="600"></textarea>
+        <mat-hint align="end">{{input.value.length || 0}}/600</mat-hint>
+        <!-- <mat-error *ngIf="observacao.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+
+      <div class="d-flex justify-content-end" id="button-submit">
+        <button type="submit" mat-raised-button color="primary">Salvar</button>
+      </div>
+
+    </mat-card-content>
+
+  </form>
+</mat-card>
+

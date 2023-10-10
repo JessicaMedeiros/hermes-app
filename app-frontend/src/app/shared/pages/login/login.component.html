@@ -1,0 +1,73 @@
+<svg id="wave" style="transform:rotate(180deg); transition: 0.3s" viewBox="0 0 1440 270" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(132.382, 62, 243, 1)" offset="0%"></stop><stop stop-color="rgba(114, 62, 243, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,243L24,238.5C48,234,96,225,144,207C192,189,240,162,288,130.5C336,99,384,63,432,49.5C480,36,528,45,576,81C624,117,672,180,720,207C768,234,816,225,864,198C912,171,960,126,1008,121.5C1056,117,1104,153,1152,175.5C1200,198,1248,207,1296,202.5C1344,198,1392,180,1440,144C1488,108,1536,54,1584,45C1632,36,1680,72,1728,112.5C1776,153,1824,198,1872,211.5C1920,225,1968,207,2016,180C2064,153,2112,117,2160,121.5C2208,126,2256,171,2304,175.5C2352,180,2400,144,2448,139.5C2496,135,2544,162,2592,162C2640,162,2688,135,2736,139.5C2784,144,2832,180,2880,193.5C2928,207,2976,198,3024,166.5C3072,135,3120,81,3168,72C3216,63,3264,99,3312,135C3360,171,3408,207,3432,225L3456,243L3456,270L3432,270C3408,270,3360,270,3312,270C3264,270,3216,270,3168,270C3120,270,3072,270,3024,270C2976,270,2928,270,2880,270C2832,270,2784,270,2736,270C2688,270,2640,270,2592,270C2544,270,2496,270,2448,270C2400,270,2352,270,2304,270C2256,270,2208,270,2160,270C2112,270,2064,270,2016,270C1968,270,1920,270,1872,270C1824,270,1776,270,1728,270C1680,270,1632,270,1584,270C1536,270,1488,270,1440,270C1392,270,1344,270,1296,270C1248,270,1200,270,1152,270C1104,270,1056,270,1008,270C960,270,912,270,864,270C816,270,768,270,720,270C672,270,624,270,576,270C528,270,480,270,432,270C384,270,336,270,288,270C240,270,192,270,144,270C96,270,48,270,24,270L0,270Z"></path><defs><linearGradient id="sw-gradient-1" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(243, 106, 62, 1)" offset="0%"></stop><stop stop-color="rgba(255, 230.393, 9.448, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 50px); opacity:0.9" fill="url(#sw-gradient-1)" d="M0,135L24,139.5C48,144,96,153,144,166.5C192,180,240,198,288,207C336,216,384,216,432,193.5C480,171,528,126,576,90C624,54,672,27,720,36C768,45,816,90,864,117C912,144,960,153,1008,144C1056,135,1104,108,1152,94.5C1200,81,1248,81,1296,103.5C1344,126,1392,171,1440,189C1488,207,1536,198,1584,202.5C1632,207,1680,225,1728,220.5C1776,216,1824,189,1872,184.5C1920,180,1968,198,2016,180C2064,162,2112,108,2160,103.5C2208,99,2256,144,2304,166.5C2352,189,2400,189,2448,198C2496,207,2544,225,2592,211.5C2640,198,2688,153,2736,117C2784,81,2832,54,2880,40.5C2928,27,2976,27,3024,45C3072,63,3120,99,3168,99C3216,99,3264,63,3312,67.5C3360,72,3408,117,3432,139.5L3456,162L3456,270L3432,270C3408,270,3360,270,3312,270C3264,270,3216,270,3168,270C3120,270,3072,270,3024,270C2976,270,2928,270,2880,270C2832,270,2784,270,2736,270C2688,270,2640,270,2592,270C2544,270,2496,270,2448,270C2400,270,2352,270,2304,270C2256,270,2208,270,2160,270C2112,270,2064,270,2016,270C1968,270,1920,270,1872,270C1824,270,1776,270,1728,270C1680,270,1632,270,1584,270C1536,270,1488,270,1440,270C1392,270,1344,270,1296,270C1248,270,1200,270,1152,270C1104,270,1056,270,1008,270C960,270,912,270,864,270C816,270,768,270,720,270C672,270,624,270,576,270C528,270,480,270,432,270C384,270,336,270,288,270C240,270,192,270,144,270C96,270,48,270,24,270L0,270Z"></path></svg>
+
+
+<div class="container">
+  <div class="row align-items-center justify-content-center row-cols-1 row-cols-lg-2 g-0">
+
+    <div class="col">
+      <div class="d-flex align-items-center justify-content-center" id="flex">
+        <img alt="xxx" class="img-fluid" alt="xxx" src="assets/login/logo.PNG">
+      </div>
+    </div>
+
+    <div class="col">
+
+      <div class="flex justify-content-center align-items-center">
+        <form [formGroup]="formLogin" (ngSubmit)="login()" class="form">
+
+          <mat-card class="mat-elevation-z0">
+
+            <mat-card-title>
+                Seja bem-vindo!
+            </mat-card-title>
+
+            <mat-card-content>
+              <div class="alerta">
+                <div class="alert alert-warning" role="alert" *ngIf="message" style="text-align: center;">
+                  {{message}}
+                </div> <br />
+              </div>
+
+
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Usuário</mat-label>
+                <input formControlName="username" required matInput placeholder="nome.sobrenome"
+                  oninput="this.value = this.value.toLowerCase()">
+                <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
+                <mat-hint>Digite: paciente </mat-hint>
+              </mat-form-field>
+
+
+
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Senha</mat-label>
+                <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" required>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  tabindex="-1" type="button" [attr.aria-pressed]="hide">
+                  <mat-icon tabindex="-1">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
+                <mat-hint>Digite: 123456
+                </mat-hint>
+              </mat-form-field>
+
+              <p *ngIf="capslockOn" style="color: #dc3545; text-align: end; font-weight: 800;"> CapsLock ligado </p>
+
+
+
+            </mat-card-content>
+            <div class="d-flex justify-content-end">
+              <button type="submit" mat-raised-button color="primary">Login</button>
+            </div>
+          </mat-card>
+
+
+
+
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

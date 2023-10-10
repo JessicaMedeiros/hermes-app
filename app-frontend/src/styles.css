@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; }
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+button,
+a,
+mat-checkbox,
+mat-accordion,
+mat-panel-title,
+mat-expansion-panel-header,
+li,
+label,
+mat-slide-toggle,
+.mat-stepper-vertical,
+.mat-slide-toggle,
+.mat-slide-toggle-content,
+.card-subtitle,
+table,
+mat-hint,
+mat-card-title,
+th,
+tr, td{
+  font-family: 'Quicksand', sans-serif !important;
+}
+
+
+.mat-dialog-content,
+.mat-toolbar,
+.mat-form-field,
+.mat-label {
+  font-weight: 400 !important;
+}

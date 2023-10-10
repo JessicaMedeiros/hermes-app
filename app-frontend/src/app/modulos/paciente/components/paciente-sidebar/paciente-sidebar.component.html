@@ -1,0 +1,44 @@
+<div *ngIf="isExpanded">
+
+  <mat-accordion class="mat-elevation-z1">
+    <mat-expansion-panel (opened)="true" (expanded)="false" (closed)="false" class="mat-elevation-z0">
+      <mat-expansion-panel-header (click)="inicial()">
+        <mat-panel-title>
+          <mat-icon mat-list-icon class="menu-icons" id="icon-button">
+            home
+          </mat-icon> Página Inicial
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion class="mat-elevation-z1">
+    <mat-expansion-panel (opened)="panelOpenState = true" [expanded]="true" (closed)="false" class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon mat-list-icon class="menu-icons" id="icon-button">
+            label
+          </mat-icon> Ocorrência
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div (click)="criarOcorrencia()">
+        <button mat-button>
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Nova ocorrência
+        </button>
+      </div>
+
+      <div (click)="historicoOcorrencia()">
+        <button mat-button>
+          <!-- <button mat-button (click)="carregarTabelaComTipos(tipo, s.id_status)"> -->
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Historico
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+</div>

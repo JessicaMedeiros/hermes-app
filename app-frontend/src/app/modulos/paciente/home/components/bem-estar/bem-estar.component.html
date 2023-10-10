@@ -1,0 +1,33 @@
+<mat-card>
+  <h2 class="titulo">Como você está se sentindo hoje?</h2>
+  <mat-card-subtitle class="sub-titulo">Vermelho significa que você não está bem. Amarelo, mais ou menos bem. E quanto
+    mais verde, melhor você está.</mat-card-subtitle>
+  <div class="d-grid gap-0 d-md-flex justify-content-md-start">
+    <mat-button-toggle-group role="group">
+      <mat-button-toggle id="nivel_critico" (click)="nivel(1)" value="1">1</mat-button-toggle>
+      <mat-button-toggle id="nivel_critico" (click)="nivel(2)" value="2">2</mat-button-toggle>
+      <mat-button-toggle id="nivel_baixo" (click)="nivel(3)" value="3">3</mat-button-toggle>
+      <mat-button-toggle id="nivel_baixo" (click)="nivel(4)" value="4">4</mat-button-toggle>
+      <mat-button-toggle id="nivel_baixo" (click)="nivel(5)" value="5">5</mat-button-toggle>
+      <mat-button-toggle id="nivel_moderado" (click)="nivel(6)" value="6">6</mat-button-toggle>
+      <mat-button-toggle id="nivel_moderado" (click)="nivel(7)" value="7">7</mat-button-toggle>
+      <mat-button-toggle id="nivel_moderado" (click)="nivel(8)" value="8">8</mat-button-toggle>
+      <mat-button-toggle id="nivel_alto" (click)="nivel(9)" value="9">9</mat-button-toggle>
+      <mat-button-toggle id="nivel_alto" (click)="nivel(10)" value="10">10</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div class="mensagem">
+    <p *ngIf="nota">Hoje você está dando <strong> nota {{nota}} </strong> para o seu bem estar. Gostaria de contar mais sobre isso? </p>
+  </div>
+
+  <mat-form-field appearance="outline" hintLabel="Máximo 600 caracteres" class="sintomas">
+    <mat-label>Descreva seus sintomas</mat-label>
+    <textarea matInput cols="40" rows="4" class="input" #input required [(ngModel)]="observacao"
+      maxlength="600"></textarea>
+    <mat-hint align="end">{{input.value.length || 0}}/600</mat-hint>
+  </mat-form-field>
+
+  <div class="d-flex justify-content-end" id="button-submit">
+    <button type="submit" mat-raised-button color="primary">Salvar como me sinto</button>
+  </div>
+</mat-card>

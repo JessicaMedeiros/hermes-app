@@ -1,0 +1,111 @@
+.sintomas {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.mensagem {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.titulo {
+  font-weight: 900;
+}
+
+.sub-titulo{
+  font-weight: 500;
+  color: #AA7EB2
+}
+
+
+mat-button-toggle-group {
+  flex-wrap: wrap;
+  flex-grow: 3;
+  margin-left: 4px;
+  margin-right: 4px;
+  box-shadow: none;
+  border: none
+}
+
+
+
+mat-button-toggle {
+  border: 1px rgba(0, 0, 0, 0) solid !important;
+  /* margin-top: 5px !important; */
+  padding: 0 5px !important;
+  z-index: 3 !important;
+}
+
+mat-button-toggle:hover {
+  background-color: #FFF !important;
+  border-radius: 5px !important;
+}
+
+.mat-button-toggle-checked#nivel_critico {
+  box-shadow: 0 0 30px #dc3545 !important;
+  border: 1px #dc3545 solid !important;
+  border-radius: 5px !important;
+  background-color: #dc3545 !important;
+  color: #fff !important;
+}
+
+
+.mat-button-toggle-checked#nivel_baixo {
+  box-shadow: 0 0 30px #e98044 !important;
+  border: 1px #e98044 solid !important;
+  border-radius: 5px !important;
+  background-color: #e98044 !important;
+  color: #fff !important;
+}
+
+.mat-button-toggle-checked#nivel_moderado {
+  box-shadow: 0 0 30px #ffc107 !important;
+  border: 1px #ffc107 solid !important;
+  border-radius: 5px !important;
+  background-color: #ffc107 !important;
+  color: #fff !important;
+}
+
+.mat-button-toggle-checked#nivel_alto {
+  box-shadow: 0 0 15px #198754 !important;
+  border: 1px #198754 solid !important;
+  border-radius: 5px !important;
+  background-color: #198754 !important;
+  color: #fff !important;
+}
+
+
+#nivel_critico {
+  background-color: #f5e0e0 !important;
+  color: #dc3545;
+}
+
+#nivel_baixo {
+  background-color: #ffe8d6 !important;
+  color: #e98044;
+}
+
+
+#nivel_moderado {
+  background-color: #f8eeb5 !important;
+  color: #ffc107;
+}
+
+#nivel_alto {
+  background-color: #e5f5eb !important;
+  color: #198754;
+}
+
+
+.mat-button-toggle-input {
+  background-color: none !important;
+  padding-left: 32px !important;
+}
+
+
+#button-submit{
+  margin-top: 2rem;
+}
+
+/* //antonia lins ajustou a prescrição e lieriy rpar farmacia, tirou todos os sos,
+//Ajuste de bruna lais se retirou os sos  */

@@ -1,0 +1,62 @@
+.full-width{
+  width: 100%;
+}
+
+.titulo {
+  font-weight: 900;
+}
+
+.sub-titulo{
+  font-weight: 500;
+  color: #AA7EB2
+}
+
+
+
+.formulario{
+  margin-top: 3rem;
+}
+
+#button-submit{
+  margin-top: 2rem;
+}
+
+
+.anexo{
+  padding: 1.5rem 0 1.5rem 0;
+  margin-top: 3rem;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.header-image {
+  background-image: url('../../../../../../../assets/file.svg');
+  background-size: cover;
+}
+
+.anexo-arquivos{
+  margin-top: 1rem;
+  padding: 10px 10px 20px 10px;
+  border: 1px dashed  rgb(232 231 231);
+}
+
+#button-file{
+  font-weight: 900;
+}
+
+
+input[type="file"] {
+  visibility: hidden;
+}
+
+.image-preview {
+  height: 20rem;
+  max-width: 40rem;
+  margin: 1rem 0;
+}
+
+.image-preview img {
+  max-height: 100%;
+  max-width: 100%
+}
+

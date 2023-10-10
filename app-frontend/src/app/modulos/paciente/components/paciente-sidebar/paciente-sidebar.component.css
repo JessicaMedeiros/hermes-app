@@ -1,0 +1,15 @@
+
+.material-icons, .menu-icons{
+  vertical-align: middle;
+}
+
+#button-on-expand{
+  margin: 0 ;
+  padding: 0;
+  width: min-content;
+}
+
+
+mat-accordion, mat-list{
+  width: fit-content;
+}
