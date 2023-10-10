@@ -11,9 +11,9 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.static(distDir));
 app.use(cors());
 
-
+var port =  3333
 app.use(express.json());
-app.use(express.json({ type: 'application/vnd.api+json' }));
+// app.use(express.json({ type: 'application/vnd.api+json' }));
 
 app.use(express.urlencoded({ extended: true }));
 
