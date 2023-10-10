@@ -36,9 +36,14 @@ import { HistoricoOcorrenciaComponent } from './modulos/paciente/pages/ocorrenci
 import { BemEstarComponent } from './modulos/paciente/home/components/bem-estar/bem-estar.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { PacienteComponent } from './modulos/paciente/paciente/paciente.component';
-import { PacienteChatComponent } from './modulos/paciente/pages/paciente-chat/paciente-chat.component';
-import { NovoChatComponent } from './modulos/paciente/components/novo-chat/novo-chat.component';
-import { HistorioChatComponent } from './modulos/paciente/components/historio-chat/historio-chat.component';
+import { PacienteChatComponent } from './modulos/paciente/pages/chat/paciente-chat/paciente-chat.component';
+import { HistoricoChatComponent } from './modulos/paciente/pages/chat/components/historico-chat/historico-chat.component';
+import { NovoChatComponent } from './modulos/paciente/pages/chat/components/novo-chat/novo-chat.component';
+import {MatDividerModule} from '@angular/material/divider';
+import { PacienteEducativoComponent } from './modulos/paciente/pages/educativo/paciente-educativo/paciente-educativo.component';
+import { ListaVideosComponent } from './modulos/paciente/pages/educativo/components/lista-videos/lista-videos.component';
+import { ListaArtigosComponent } from './modulos/paciente/pages/educativo/components/lista-artigos/lista-artigos.component';
+import { EducativoGeralComponent } from './modulos/paciente/pages/educativo/components/educativo-geral/educativo-geral.component';
 
 
 @NgModule({
@@ -55,7 +60,11 @@ import { HistorioChatComponent } from './modulos/paciente/components/historio-ch
     PacienteComponent,
     PacienteChatComponent,
     NovoChatComponent,
-    HistorioChatComponent
+    HistoricoChatComponent,
+    PacienteEducativoComponent,
+    ListaVideosComponent,
+    ListaArtigosComponent,
+    EducativoGeralComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,7 +89,8 @@ import { HistorioChatComponent } from './modulos/paciente/components/historio-ch
     MatDialogModule,
     MatGridListModule,
     MatExpansionModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatDividerModule
 
   ],
   providers: [],

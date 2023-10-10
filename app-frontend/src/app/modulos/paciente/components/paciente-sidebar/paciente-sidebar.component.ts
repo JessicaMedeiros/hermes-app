@@ -45,4 +45,23 @@ export class PacienteSidebarComponent implements OnInit {
     this.router.navigate(['paciente']);
   }
 
+  criarNovoChat(){
+    this.router.navigate(['paciente/chat/novo']);
+  }
+
+  historicoChat(){
+    this.router.navigate(['paciente/chat/historico']);
+  }
+
+
+  inicialEducativo(){
+    this.router.navigate(['paciente/educativo']);
+  }
+
+  educativoVideos(){
+    this.router.navigate(['paciente/educativo/lista-videos']);
+  }
+  educativoArtigos(){
+    this.router.navigate(['paciente/educativo/lista-artigos']);
+  }
 }

@@ -1,3 +1,4 @@
+import { HistoricoChatComponent } from './modulos/paciente/pages/chat/components/historico-chat/historico-chat.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './shared/pages/login/login.component';
@@ -6,6 +7,12 @@ import { PacienteOcorrenciaComponent } from './modulos/paciente/pages/ocorrencia
 import { CriarOcorrenciaComponent } from './modulos/paciente/pages/ocorrencia/components/criar-ocorrencia/criar-ocorrencia.component';
 import { HistoricoOcorrenciaComponent } from './modulos/paciente/pages/ocorrencia/components/historico-ocorrencia/historico-ocorrencia.component';
 import { PacienteComponent } from './modulos/paciente/paciente/paciente.component';
+import { NovoChatComponent } from './modulos/paciente/pages/chat/components/novo-chat/novo-chat.component';
+import { PacienteChatComponent } from './modulos/paciente/pages/chat/paciente-chat/paciente-chat.component';
+import { PacienteEducativoComponent } from './modulos/paciente/pages/educativo/paciente-educativo/paciente-educativo.component';
+import { ListaVideosComponent } from './modulos/paciente/pages/educativo/components/lista-videos/lista-videos.component';
+import { ListaArtigosComponent } from './modulos/paciente/pages/educativo/components/lista-artigos/lista-artigos.component';
+import { EducativoGeralComponent } from './modulos/paciente/pages/educativo/components/educativo-geral/educativo-geral.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -28,6 +35,29 @@ const routes: Routes = [
           },
           {
             path: 'historico', component: HistoricoOcorrenciaComponent,
+          }
+        ]
+      },
+      {
+        path: 'chat', component: PacienteChatComponent, children: [
+          {
+            path: 'novo', component: NovoChatComponent,
+          },
+          {
+            path: 'historico', component: HistoricoChatComponent,
+          }
+        ]
+      },
+      {
+        path: 'educativo', component: PacienteEducativoComponent, children: [
+          {
+            path: '', component: EducativoGeralComponent,
+          },
+          {
+            path: 'lista-videos', component: ListaVideosComponent,
+          },
+          {
+            path: 'lista-artigos', component: ListaArtigosComponent,
           }
         ]
       }
