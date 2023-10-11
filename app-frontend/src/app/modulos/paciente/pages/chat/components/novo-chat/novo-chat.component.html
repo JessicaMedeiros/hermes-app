@@ -1,0 +1,29 @@
+
+<h2>Mensagem 04 | Iniciada em 01/01/2023 às 20:01</h2>
+
+<div class="main-container">
+  <div class="card-conteudo-mensagens">
+
+
+
+  </div>
+
+
+
+</div>
+<mat-divider id="divider"></mat-divider>
+
+
+<mat-form-field appearance="outline" hintLabel="Máximo 600 caracteres" class="full-width">
+  <mat-label>Descreva seus sintomas</mat-label>
+  <textarea matInput cols="40" rows="3" class="input" #input required maxlength="600"></textarea>
+  <mat-hint align="end">{{input.value.length || 0}}/600</mat-hint>
+  <!-- <mat-error *ngIf="observacao.invalid">{{getErrorMessage()}}</mat-error> -->
+</mat-form-field>
+
+<div class="d-flex justify-content-end" id="button-submit">
+  <button type="submit" mat-raised-button color="primary">Enviar</button>
+</div>
+
+
+<!-- 895 - trocar pra -->

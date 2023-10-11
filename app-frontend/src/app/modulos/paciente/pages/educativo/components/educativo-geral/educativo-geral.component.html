@@ -1,0 +1,40 @@
+<section class="video">
+  <h3 class="titulo">Videos</h3>
+  <mat-divider></mat-divider>
+  Assista ao vídeo novo | Confira o que a enfemeira Marcelle fala sobre a importância de lavar as mãos
+
+  <div class="embed-responsive embed-responsive-16by9" id="content">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=r7qovpFAGrQ&ab_channel=LilNasXVEVO"
+      allowfullscreen></iframe>
+  </div>
+
+  <div class="d-flex justify-content-end">
+    <button mat-raised-button [routerLink]="['/paciente/educativo/lista-videos']" color="accent">Ver mais vídeos</button>
+  </div>
+
+
+</section>
+
+<section class="artigo">
+  <h3 class="titulo">Artigos</h3>
+  <mat-divider></mat-divider>
+  <div class="card" id="content">
+    <div class="card-body">
+      Como funciona a escala PPS
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      O que são cuidados paliativos?
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      Cuidados essenciais para o paciente em homecare
+    </div>
+  </div>
+  <div class="d-flex justify-content-end" id="but-mais-conteudo">
+    <button mat-raised-button [routerLink]="['/paciente/educativo/lista-artigos']" color="accent">Ver mais artigos</button>
+  </div>
+
+</section>
