@@ -46,6 +46,7 @@ import { ListaVideosComponent } from './modulos/paciente/pages/educativo/compone
 import { ListaArtigosComponent } from './modulos/paciente/pages/educativo/components/lista-artigos/lista-artigos.component';
 import { EducativoGeralComponent } from './modulos/paciente/pages/educativo/components/educativo-geral/educativo-geral.component';
 import { DiarioBemEstarComponent } from './modulos/paciente/home/components/diario-bem-estar/diario-bem-estar.component';
+import { DetalheOcorrenciaComponent } from './modulos/paciente/pages/ocorrencia/components/detalhe-ocorrencia/detalhe-ocorrencia.component';
 
 
 @NgModule({
@@ -68,6 +69,7 @@ import { DiarioBemEstarComponent } from './modulos/paciente/home/components/diar
     ListaArtigosComponent,
     EducativoGeralComponent,
     DiarioBemEstarComponent,
+    DetalheOcorrenciaComponent,
   ],
   imports: [
     BrowserModule,

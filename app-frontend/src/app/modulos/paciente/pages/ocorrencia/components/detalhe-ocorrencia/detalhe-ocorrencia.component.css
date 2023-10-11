@@ -1,0 +1,18 @@
+.card-status-ocorrencia_ativo{
+  margin-bottom: 1rem;
+  background-color: rgb(31, 146, 16);
+  color:  white;
+}
+
+.card-status-ocorrencia_inativo{
+  margin-bottom: 1rem;
+  background-color:rgb(146, 16, 55) ;
+  color:  white;
+}
+
+#card-main-informacoes{
+  border-top: 3px solid #e98044;
+}
+#card-main-encerramento{
+  margin-top: 3rem;
+}
