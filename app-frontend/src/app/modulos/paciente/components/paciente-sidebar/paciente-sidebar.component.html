@@ -1,14 +1,23 @@
 <div *ngIf="isExpanded">
 
   <mat-accordion class="mat-elevation-z1">
-    <mat-expansion-panel (opened)="true" (expanded)="false" (closed)="false" class="mat-elevation-z0">
+    <mat-expansion-panel (opened)="panelOpenState = true" [expanded]="true" (closed)="false" class="mat-elevation-z0">
       <mat-expansion-panel-header (click)="inicial()">
         <mat-panel-title>
-          <mat-icon mat-list-icon class="menu-icons" id="icon-button">
+          <mat-icon mat-list-icon class="menu-icons">
             home
-          </mat-icon> Página Inicial
+          </mat-icon><span class="titulo-menu-principal">Página Inicial</span>
         </mat-panel-title>
       </mat-expansion-panel-header>
+
+      <div (click)="diarioBemEstar()">
+        <button mat-button>
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Diário bem estar
+        </button>
+      </div>
+
     </mat-expansion-panel>
   </mat-accordion>
 
@@ -16,9 +25,9 @@
     <mat-expansion-panel (opened)="panelOpenState = true" [expanded]="true" (closed)="false" class="mat-elevation-z0">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-icon mat-list-icon class="menu-icons" id="icon-button">
+          <mat-icon mat-list-icon class="menu-icons">
             label
-          </mat-icon> Ocorrência
+          </mat-icon> <span class="titulo-menu-principal">Ocorrência</span>
         </mat-panel-title>
       </mat-expansion-panel-header>
 
@@ -45,9 +54,9 @@
     <mat-expansion-panel (opened)="panelOpenState = true" [expanded]="true" (closed)="false" class="mat-elevation-z0">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-icon mat-list-icon class="menu-icons" id="icon-button">
+          <mat-icon mat-list-icon class="menu-icons">
             label
-          </mat-icon> Chat
+          </mat-icon> <span class="titulo-menu-principal">Chat</span>
         </mat-panel-title>
       </mat-expansion-panel-header>
 
@@ -74,9 +83,9 @@
     <mat-expansion-panel (opened)="panelOpenState = true" [expanded]="true" (closed)="false" class="mat-elevation-z0">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <mat-icon mat-list-icon class="menu-icons" id="icon-button">
+          <mat-icon mat-list-icon class="menu-icons">
             label
-          </mat-icon> Educativo
+          </mat-icon> <span class="titulo-menu-principal">Educativo</span>
         </mat-panel-title>
       </mat-expansion-panel-header>
 

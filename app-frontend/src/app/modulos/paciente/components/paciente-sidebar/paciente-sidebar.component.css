@@ -1,6 +1,10 @@
 
-.material-icons, .menu-icons{
-  vertical-align: middle;
+.titulo-menu-principal{
+  padding-left: 5px;
+}
+
+.menu-icons{
+  color: #fdd133;
 }
 
 #button-on-expand{

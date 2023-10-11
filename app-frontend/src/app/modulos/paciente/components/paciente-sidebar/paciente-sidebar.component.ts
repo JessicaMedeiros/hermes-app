@@ -45,6 +45,10 @@ export class PacienteSidebarComponent implements OnInit {
     this.router.navigate(['paciente']);
   }
 
+  diarioBemEstar(){
+    this.router.navigate(['paciente/bem-estar/diario']);
+  }
+
   criarNovoChat(){
     this.router.navigate(['paciente/chat/novo']);
   }
@@ -52,7 +56,6 @@ export class PacienteSidebarComponent implements OnInit {
   historicoChat(){
     this.router.navigate(['paciente/chat/historico']);
   }
-
 
   inicialEducativo(){
     this.router.navigate(['paciente/educativo']);

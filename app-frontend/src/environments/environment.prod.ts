@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+
+  DEV_MODE: "development"
+  // DEV_MODE: "production"
 };

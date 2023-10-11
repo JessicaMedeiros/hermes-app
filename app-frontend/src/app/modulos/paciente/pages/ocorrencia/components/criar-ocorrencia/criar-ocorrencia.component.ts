@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { CriarOcorrenciaService } from 'src/app/modulos/paciente/services/ocorrencia/criar-ocorrencia.service';
 
 @Component({
   selector: 'app-criar-ocorrencia',
@@ -10,26 +11,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class CriarOcorrenciaComponent implements OnInit {
 
   formularioNovaOcorrencia!: FormGroup;
-
-  constructor(private fb: FormBuilder,) { }
-
-  ngOnInit(): void {
-
-    this.formularioNovaOcorrencia = this.fb.group({
-      data: ['', Validators.required],
-      hora: ['', Validators.required],
-      observacao: ['', Validators.required],
-      medicamentos: ['', Validators.required],
-    })
-
-
-  }
-
-
-  transform(size: number, extension: string = 'MB') {
-    return (size / (1024 * 1024)).toFixed(2) + extension;
-  }
-
   fileName!: any;
   hasFile: boolean = false;
   testFile: any;
@@ -47,6 +28,58 @@ export class CriarOcorrenciaComponent implements OnInit {
   files!: FileList | null;
   fileList: File[] = [];
   listOfFiles: any[] = [];
+  done = false;
+
+  constructor(private fb: FormBuilder,
+    private service: CriarOcorrenciaService) { }
+
+  ngOnInit(): void {
+
+    this.formularioNovaOcorrencia = this.fb.group({
+      data: ['', Validators.required],
+      hora: ['', Validators.required],
+      observacao: ['', Validators.required],
+      medicamentos: ['', Validators.required],
+    })
+
+  }
+
+
+
+
+  salvar() {
+
+    const form = this.formularioNovaOcorrencia.value;
+    const obj = { data: form.data, hora: form.hora, observacao: form.observacao, medicamentos: form.medicamentos }
+
+    var formData = new FormData();
+    formData.append('object', JSON.stringify([obj]));
+
+
+    for (let index = 0; index < this.fileList.length; index++) {
+      const element = this.fileList[index];
+      formData.append('files', element);
+    }
+
+
+    this.service.salvarOcorrencia(formData).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.done = true;
+      },
+      error: (error) => {
+        console.log('this.error', error)
+
+      }
+    })
+  }
+
+
+
+  transform(size: number, extension: string = 'MB') {
+    return (size / (1024 * 1024)).toFixed(2) + extension;
+  }
+
 
   removerArquivo(index: any) {
     // Delete the item from fileNames list
@@ -64,6 +97,7 @@ export class CriarOcorrenciaComponent implements OnInit {
     console.log('filelist-----', this.fileList)
   }
 
+
   uploadFile(event: Event) {
     this.corBotao = "primary"
     this.messagemTipoErrado = "";
@@ -75,7 +109,7 @@ export class CriarOcorrenciaComponent implements OnInit {
     this.listaFiles = this.files;
 
     console.log('this.listoffile', this.listaFiles2)
-    if(this.listaFiles2.length >= 2) {
+    if (this.listaFiles2.length >= 2) {
       this.messagemExcedidaQuantidadeMaxDeArquivos = "Excedida a quantidade máxima de arquivos.Exclua um dos item pra continuar";
       return;
     }
@@ -109,7 +143,6 @@ export class CriarOcorrenciaComponent implements OnInit {
         lastModifiedDate: file.lastModifiedDate
       };
     })
-
-
   }
+
 }

@@ -1,8 +1,11 @@
-<mat-card>
-  <h2 class="titulo">Nova Ocorrência</h2>
-  <mat-card-subtitle class="sub-titulo">Caso queira informar alguam situação de emergência. Acionaremos a nossa equipe o
-    mais rápido possível.</mat-card-subtitle>
+<h2 class="titulo">Nova Ocorrência</h2>
+<mat-card-subtitle class="sub-titulo">Caso queira informar alguam situação de emergência. Acionaremos a nossa equipe o
+  mais rápido possível.</mat-card-subtitle>
 
+<mat-divider id="divider"></mat-divider>
+
+<mat-card *ngIf="!done">
+  <mat-card-subtitle class="sub-titulo">Preencha todos os campos abaixo: </mat-card-subtitle>
   <form [formGroup]="formularioNovaOcorrencia" class="formulario">
     <mat-card-content>
       <div class="row">
@@ -36,7 +39,7 @@
 
       <div class="anexo">
 
-        <h3>Anexe no máximo duas fotos para nos dar mais informação sobre o que está acontecendo</h3>
+        <h3>(Opcional) Anexe no máximo duas fotos para nos dar mais informação sobre o que está acontecendo</h3>
         <div class="d-flex justify-content-center">
           <button mat-button mat-flat-button [color]="corBotao" type="button" id="button-file"
             (click)="filePicker.click()">
@@ -67,7 +70,9 @@
 
 
                 <div mat-card-avatar class="header-image"></div>
-                <mat-card-title><h3>{{ f.name }}</h3></mat-card-title>
+                <mat-card-title>
+                  <h3>{{ f.name }}</h3>
+                </mat-card-title>
                 <mat-card-subtitle>Tamanho: {{ f.size }}</mat-card-subtitle>
 
 
@@ -97,7 +102,7 @@
       </mat-form-field>
 
       <div class="d-flex justify-content-end" id="button-submit">
-        <button type="submit" mat-raised-button color="primary">Salvar</button>
+        <button type="submit" mat-raised-button color="primary" (click)="salvar()">Salvar</button>
       </div>
 
     </mat-card-content>
@@ -105,3 +110,6 @@
   </form>
 </mat-card>
 
+<div class="alert alert-success" role="alert" *ngIf="done">
+  O registro da ocorrência foi realizado com sucesso! Em breve, um dos nossos profissionais irá analisá-la.
+</div>

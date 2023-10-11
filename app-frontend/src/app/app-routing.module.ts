@@ -13,6 +13,7 @@ import { PacienteEducativoComponent } from './modulos/paciente/pages/educativo/p
 import { ListaVideosComponent } from './modulos/paciente/pages/educativo/components/lista-videos/lista-videos.component';
 import { ListaArtigosComponent } from './modulos/paciente/pages/educativo/components/lista-artigos/lista-artigos.component';
 import { EducativoGeralComponent } from './modulos/paciente/pages/educativo/components/educativo-geral/educativo-geral.component';
+import { DiarioBemEstarComponent } from './modulos/paciente/home/components/diario-bem-estar/diario-bem-estar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -28,6 +29,7 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
+      { path: 'bem-estar/diario', component: DiarioBemEstarComponent },
       {
         path: 'ocorrencia', component: PacienteOcorrenciaComponent, children: [
           {

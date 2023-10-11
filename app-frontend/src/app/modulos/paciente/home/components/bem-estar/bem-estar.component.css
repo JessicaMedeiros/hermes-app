@@ -12,7 +12,7 @@
   font-weight: 900;
 }
 
-.sub-titulo{
+.sub-titulo {
   font-weight: 500;
   color: #AA7EB2
 }
@@ -103,8 +103,14 @@ mat-button-toggle:hover {
 }
 
 
-#button-submit{
+#button-submit {
   margin-top: 2rem;
+}
+
+#section-bemestar-respondido {
+  font-weight: 900;
+  border-top:5px solid #673ab7;
+  color: #673ab7;
 }
 
 /* //antonia lins ajustou a prescrição e lieriy rpar farmacia, tirou todos os sos,

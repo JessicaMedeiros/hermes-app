@@ -60,3 +60,7 @@ input[type="file"] {
   max-width: 100%
 }
 
+
+#divider{
+  margin-bottom: 2rem;
+}

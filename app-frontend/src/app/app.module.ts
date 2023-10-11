@@ -20,6 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -44,6 +45,7 @@ import { PacienteEducativoComponent } from './modulos/paciente/pages/educativo/p
 import { ListaVideosComponent } from './modulos/paciente/pages/educativo/components/lista-videos/lista-videos.component';
 import { ListaArtigosComponent } from './modulos/paciente/pages/educativo/components/lista-artigos/lista-artigos.component';
 import { EducativoGeralComponent } from './modulos/paciente/pages/educativo/components/educativo-geral/educativo-geral.component';
+import { DiarioBemEstarComponent } from './modulos/paciente/home/components/diario-bem-estar/diario-bem-estar.component';
 
 
 @NgModule({
@@ -65,6 +67,7 @@ import { EducativoGeralComponent } from './modulos/paciente/pages/educativo/comp
     ListaVideosComponent,
     ListaArtigosComponent,
     EducativoGeralComponent,
+    DiarioBemEstarComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,8 +93,8 @@ import { EducativoGeralComponent } from './modulos/paciente/pages/educativo/comp
     MatGridListModule,
     MatExpansionModule,
     MatButtonToggleModule,
-    MatDividerModule
-
+    MatDividerModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,23 @@
-<mat-card>
+<mat-spinner *ngIf="loading"></mat-spinner>
+
+<mat-card *ngIf="!done && !loading">
   <h2 class="titulo">Como você está se sentindo hoje?</h2>
   <mat-card-subtitle class="sub-titulo">Vermelho significa que você não está bem. Amarelo, mais ou menos bem. E quanto
     mais verde, melhor você está.</mat-card-subtitle>
+  <div class="alert alert-success" role="alert" *ngIf="message">
+    {{message}}
+  </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+    {{errorMessage}}
+  </div>
+  <div class="alert alert-warning" role="alert" *ngIf="  messageNivelDeBemEstarBaixo">
+    {{  messageNivelDeBemEstarBaixo }}
+  </div>
+
+
+  <!-- Caso ainda não tenha sido respondida -->
+
   <div class="d-grid gap-0 d-md-flex justify-content-md-start">
     <mat-button-toggle-group role="group">
       <mat-button-toggle id="nivel_critico" (click)="nivel(1)" value="1">1</mat-button-toggle>
@@ -17,7 +33,8 @@
     </mat-button-toggle-group>
   </div>
   <div class="mensagem">
-    <p *ngIf="nota">Hoje você está dando <strong> nota {{nota}} </strong> para o seu bem estar. Gostaria de contar mais sobre isso? </p>
+    <p *ngIf="nota">Hoje você está dando <strong> nota {{nota}} </strong> para o seu bem estar. Gostaria de contar
+      mais sobre isso? </p>
   </div>
 
   <mat-form-field appearance="outline" hintLabel="Máximo 600 caracteres" class="sintomas">
@@ -28,6 +45,23 @@
   </mat-form-field>
 
   <div class="d-flex justify-content-end" id="button-submit">
-    <button type="submit" mat-raised-button color="primary" (click)="salvar()">Salvar como me sinto</button>
+    <button type="submit" mat-raised-button [color]="colorButton" (click)="salvar()">{{textButton}}</button>
   </div>
+
 </mat-card>
+
+
+<section *ngIf="done && !loading">
+  <div class="card" id="section-bemestar-respondido">
+    <div class="card-body">
+      <h3>Agradecemos que você tenha respondido como está se sentindo hoje. Amanhã perguntaremos novamente. Sua reposta foi:</h3>
+      <p><strong>Nota: {{bemestar.nota}} </strong> </p>
+      <p><strong>Avaliação: {{bemestar.observacao? bemestar.observacao : "Descrição dos sintomas não foi informada"}}</strong> </p>
+      <div class="d-flex justify-content-end">
+        <button mat-stroked-button color="warn" (click)="apagarDados()">Remover avaliação</button>
+      </div>
+
+    </div>
+  </div>
+
+</section>
