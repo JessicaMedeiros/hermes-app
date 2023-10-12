@@ -1,10 +1,11 @@
 <mat-card id="card-main-informacoes">
   <div class="row">
     <div class="col">
-      <p> Sintomas: {{ocorrencia.sintomas}}</p>
-      <p> Medicamentos usados: {{ocorrencia.medicacao_desc}}</p>
+      <p> <strong> Sintomas: </strong>{{ocorrencia.sintomas}}</p>
+      <p> <strong>Medicamentos usados: </strong> {{ocorrencia.medicacao_desc}}</p>
 
-      <p> Data ocorrência: {{ocorrencia.data_ocorrencia | date: 'dd/MM/yyyy'}} | Hora ocorrência:
+      <p> <strong>Data ocorrência: </strong> {{ocorrencia.data_ocorrencia | date: 'dd/MM/yyyy'}} | <strong> Hora
+          ocorrência:</strong>
         {{ocorrencia.hora_ocorrencia }}</p>
 
     </div>

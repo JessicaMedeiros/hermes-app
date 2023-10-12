@@ -1,0 +1,176 @@
+<div *ngIf="isExpanded">
+
+  <mat-accordion class="mat-elevation-z1">
+    <mat-expansion-panel (opened)="panelOpenState = true" [expanded]="true" (closed)="false" class="mat-elevation-z0">
+      <mat-expansion-panel-header (click)="inicial()">
+        <mat-panel-title>
+          <mat-icon mat-list-icon class="menu-icons">
+            home
+          </mat-icon><span class="titulo-menu-principal">Página Inicial</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div (click)="diarioBemEstar()">
+        <button mat-button>
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Editar perfil
+        </button>
+      </div>
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion class="mat-elevation-z1">
+    <mat-expansion-panel (opened)="panelOpenState = true" [expanded]="true" (closed)="false" class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon mat-list-icon class="menu-icons">
+            label
+          </mat-icon> <span class="titulo-menu-principal"> Bem estar</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div (click)="historicoChat()">
+        <button mat-button>
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Gerenciar
+        </button>
+      </div>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+  <mat-accordion class="mat-elevation-z1">
+    <mat-expansion-panel (opened)="panelOpenState = true" [expanded]="true" (closed)="false" class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon mat-list-icon class="menu-icons">
+            label
+          </mat-icon> <span class="titulo-menu-principal">Ocorrência</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div (click)="historicoOcorrencia()">
+        <button mat-button>
+          <!-- <button mat-button (click)="carregarTabelaComTipos(tipo, s.id_status)"> -->
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Novas solicitações (3)
+        </button>
+      </div>
+      <div (click)="historicoOcorrencia()">
+        <button mat-button>
+          <!-- <button mat-button (click)="carregarTabelaComTipos(tipo, s.id_status)"> -->
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Em andamento (8)
+        </button>
+      </div>
+      <div (click)="historicoOcorrencia()">
+        <button mat-button>
+          <!-- <button mat-button (click)="carregarTabelaComTipos(tipo, s.id_status)"> -->
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Finalizadas
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion class="mat-elevation-z1">
+    <mat-expansion-panel (opened)="panelOpenState = true" [expanded]="true" (closed)="false" class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon mat-list-icon class="menu-icons">
+            label
+          </mat-icon> <span class="titulo-menu-principal">Chat</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div (click)="historicoChat()">
+        <button mat-button>
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Novas solicitações (12)
+        </button>
+      </div>
+      <div (click)="historicoChat()">
+        <button mat-button>
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Em andamento (12)
+        </button>
+      </div>
+
+      <div (click)="historicoChat()">
+        <button mat-button>
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Encerradas
+        </button>
+      </div>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+  <mat-accordion class="mat-elevation-z1">
+    <mat-expansion-panel (opened)="panelOpenState = true" [expanded]="true" (closed)="false" class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon mat-list-icon class="menu-icons">
+            label
+          </mat-icon> <span class="titulo-menu-principal">Educativo</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div (click)="inicialEducativo()">
+        <button mat-button>
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Gerenciar vídeos
+        </button>
+      </div>
+
+      <div (click)="educativoArtigos()">
+        <button mat-button>
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Gerenciar artigos
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- ACESSO PARA ADMINISTRADOR -->
+  <mat-accordion class="mat-elevation-z1">
+    <mat-expansion-panel (opened)="panelOpenState = true" [expanded]="true" (closed)="false" class="mat-elevation-z0">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon mat-list-icon class="menu-icons">
+            label
+          </mat-icon> <span class="titulo-menu-principal">Administrador</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div (click)="inicialEducativo()">
+        <button mat-button>
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Relatório
+        </button>
+      </div>
+
+      <div (click)="educativoArtigos()">
+        <button mat-button>
+          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
+          </mat-icon>
+          Gerenciar usuários
+        </button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+</div>

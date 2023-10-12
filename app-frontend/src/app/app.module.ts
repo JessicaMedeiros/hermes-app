@@ -47,6 +47,14 @@ import { ListaArtigosComponent } from './modulos/paciente/pages/educativo/compon
 import { EducativoGeralComponent } from './modulos/paciente/pages/educativo/components/educativo-geral/educativo-geral.component';
 import { DiarioBemEstarComponent } from './modulos/paciente/home/components/diario-bem-estar/diario-bem-estar.component';
 import { DetalheOcorrenciaComponent } from './modulos/paciente/pages/ocorrencia/components/detalhe-ocorrencia/detalhe-ocorrencia.component';
+import { ProfissionalComponent } from './modulos/profissional/profissional/profissional.component';
+import { LoginProfissionalComponent } from './modulos/profissional/pages/login-profissional/login-profissional.component';
+import { ProfissionalNavbarComponent } from './modulos/profissional/components/profissional-navbar/profissional-navbar.component';
+import { ProfissionalSidebarComponent } from './modulos/profissional/components/profissional-sidebar/profissional-sidebar.component';
+import { NotificacaoOcorrenciasComponent } from './modulos/profissional/home/components/notificacao-ocorrencias/notificacao-ocorrencias.component';
+import { NotificacaoBemEstarComponent } from './modulos/profissional/home/components/notificacao-bem-estar/notificacao-bem-estar.component';
+import { NotificacaoChatComponent } from './modulos/profissional/home/components/notificacao-chat/notificacao-chat.component';
+import { HomeProssionalComponent } from './modulos/profissional/home/home.component';
 
 
 @NgModule({
@@ -70,6 +78,14 @@ import { DetalheOcorrenciaComponent } from './modulos/paciente/pages/ocorrencia/
     EducativoGeralComponent,
     DiarioBemEstarComponent,
     DetalheOcorrenciaComponent,
+    ProfissionalComponent,
+    LoginProfissionalComponent,
+    ProfissionalNavbarComponent,
+    ProfissionalSidebarComponent,
+    NotificacaoOcorrenciasComponent,
+    NotificacaoBemEstarComponent,
+    NotificacaoChatComponent,
+    HomeProssionalComponent
   ],
   imports: [
     BrowserModule,

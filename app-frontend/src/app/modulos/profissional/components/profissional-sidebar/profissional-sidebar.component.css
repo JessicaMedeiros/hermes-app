@@ -1,0 +1,18 @@
+.titulo-menu-principal{
+  padding-left: 5px;
+}
+
+.menu-icons{
+  color: #fdd133;
+}
+
+#button-on-expand{
+  margin: 0 ;
+  padding: 0;
+  width: min-content;
+}
+
+
+mat-accordion, mat-list{
+  width: fit-content;
+}

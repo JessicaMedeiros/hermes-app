@@ -15,6 +15,9 @@ import { ListaArtigosComponent } from './modulos/paciente/pages/educativo/compon
 import { EducativoGeralComponent } from './modulos/paciente/pages/educativo/components/educativo-geral/educativo-geral.component';
 import { DiarioBemEstarComponent } from './modulos/paciente/home/components/diario-bem-estar/diario-bem-estar.component';
 import { DetalheOcorrenciaComponent } from './modulos/paciente/pages/ocorrencia/components/detalhe-ocorrencia/detalhe-ocorrencia.component';
+import { ProfissionalComponent } from './modulos/profissional/profissional/profissional.component';
+import { HomeProssionalComponent } from './modulos/profissional/home/home.component';
+import { LoginProfissionalComponent } from './modulos/profissional/pages/login-profissional/login-profissional.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -70,6 +73,18 @@ const routes: Routes = [
       }
     ]
   },
+
+  { path: 'login/profissional', component: LoginProfissionalComponent },
+
+  {
+    path: 'profissional', component: ProfissionalComponent,
+    children: [
+
+      { path: '', component: HomeProssionalComponent },
+      { path: 'home', component: HomeProssionalComponent },
+      { path: 'bem-estar/diario', component: DiarioBemEstarComponent },
+    ]
+  }
 
 ];
 

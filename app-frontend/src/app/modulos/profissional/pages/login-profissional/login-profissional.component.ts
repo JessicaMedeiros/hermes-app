@@ -1,16 +1,17 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from "@angular/router";
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpHeaders,  HttpClient } from '@angular/common/http';
 import { Location } from '@angular/common';
 import { BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
 
+
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-login-profissional',
+  templateUrl: './login-profissional.component.html',
+  styleUrls: ['./login-profissional.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginProfissionalComponent implements OnInit {
 
   spinner = false;
   formLogin!: FormGroup;
@@ -114,6 +115,6 @@ export class LoginComponent implements OnInit {
 
 
   moduloProfissional(){
-    this.router.navigate(['login/profissional'])
+    this.router.navigate(['profissional/login'])
   }
 }

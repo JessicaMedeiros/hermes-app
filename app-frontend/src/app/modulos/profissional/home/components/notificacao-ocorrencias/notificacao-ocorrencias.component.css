@@ -1,0 +1,12 @@
+.titulo-header{
+  font-weight: 900;
+}
+
+.titulo{
+  font-weight: 900;
+}
+
+mat-card{
+  border-top:5px solid #673ab7;
+  color: #673ab7;
+}
