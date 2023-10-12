@@ -1,0 +1,11 @@
+.full-width{
+  width: 100%
+}
+
+.card-resolucao, .card-atribuicao-profissional{
+  margin-top: 2rem;
+}
+
+.mat-radio-button~.mat-radio-button {
+  margin-left: 16px;
+}

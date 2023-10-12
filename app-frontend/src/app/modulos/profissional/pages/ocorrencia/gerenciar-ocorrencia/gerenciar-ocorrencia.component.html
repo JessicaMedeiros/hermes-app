@@ -1,0 +1,66 @@
+<app-informacao-ocorrencia></app-informacao-ocorrencia>
+
+<mat-card class="card-atribuicao-profissional" *ngIf="!admin">
+  <h3> <strong>Associar ao profissional:</strong> </h3>
+  <mat-card-content *ngIf="ocorrencia.id_profissional != null">
+    Ocorrência atribuída a você
+  </mat-card-content>
+  <mat-card-content *ngIf="ocorrencia.id_profissional  == null">
+    <button mat-raised-button color="accent" (click)="atribuirASi()">Atribuir pra si</button>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card class="card-atribuicao-profissional" *ngIf="admin">
+  <h3> <strong>Associar ao profissional: </strong> </h3>
+  <mat-card-content>
+    <mat-form-field appearance="outline">
+      <mat-label>Select um profissional</mat-label>
+      <mat-select [(value)]="profissionalSelecionado">
+        <mat-option>Nenhum</mat-option>
+        <mat-option value="1">Profissional 1</mat-option>
+        <mat-option value="2">Profissional 2</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-footer align="end">
+    <button mat-raised-button color="primary" (click)="atribuirProfissional()">Atribuir profissional</button>
+  </mat-card-footer>
+
+</mat-card>
+
+<mat-card class="card-resolucao">
+  <h3> <strong>Resolução da Ocorrência: </strong> </h3>
+  <mat-card-content>
+
+    <div class="row">
+      <div class="col-md-auto">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Data da finalização</mat-label>
+          <input matInput class="input" [(ngModel)]="ocorrencia.data_desfecho" type="date" required
+            placeholder="Data da finalização do desfecho">
+        </mat-form-field>
+      </div>
+      <div class="col-md-auto">
+        <label>Preciso chamar a ambulância? </label> &nbsp;
+        <mat-radio-group aria-label="selecione se ambulância foi utilizada"
+          [(ngModel)]="ocorrencia.utilizou_ambulancia">
+          <mat-radio-button color="primary" [value]="true">Sim</mat-radio-button>
+          <mat-radio-button color="warn" [value]="false">Não</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <mat-form-field appearance="outline" hintLabel="Máximo 600 caracteres" class="full-width">
+      <mat-label>Foram aplicados medicamentos? Quais?</mat-label>
+      <textarea matInput cols="40" rows="8" class="input" #input required [(ngModel)]="ocorrencia.desfecho"
+        maxlength="600"></textarea>
+      <mat-hint align="end">{{input.value.length || 0}}/600</mat-hint>
+    </mat-form-field>
+
+  </mat-card-content>
+  <mat-card-footer align="end" *ngIf="editavel">
+    <button mat-stroked-button color="primary"(click)="atualizar(false)">Atualizar</button>
+    <button mat-raised-button color="primary" (click)="atualizar(true)">Salvar e finalizar</button>
+  </mat-card-footer>
+
+</mat-card>

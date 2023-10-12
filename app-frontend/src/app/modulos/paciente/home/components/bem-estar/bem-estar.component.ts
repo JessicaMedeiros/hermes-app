@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BemEstarService } from '../../../services/bem-estar/bem-estar.service';
 import { BehaviorSubject, Observable} from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -12,7 +12,7 @@ interface RespostaServidor{
   templateUrl: './bem-estar.component.html',
   styleUrls: ['./bem-estar.component.css']
 })
-export class BemEstarComponent implements OnInit {
+export class BemEstarComponent implements OnInit, OnDestroy {
 
   done!: boolean;
 
@@ -130,4 +130,9 @@ export class BemEstarComponent implements OnInit {
       }
     })
   }
+
+  ngOnDestroy(){
+    this.refreshBemestar$.unsubscribe();
+  }
+
 }

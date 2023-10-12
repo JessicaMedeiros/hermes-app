@@ -12,20 +12,24 @@ export class ProfissionalNavbarComponent implements OnInit {
   isExpanded = true;
   clickEventSubscription!: PushSubscription;
 
-  constructor( private service: SharedService, private router: Router) { }
+  constructor(
+    private service: SharedService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
 
   clickMe() {
-
     this.isExpanded = !this.isExpanded;
-    console.log('----this.isExpanded', this.isExpanded)
-
     this.service.sendClickEvent(this.isExpanded);
   }
 
-  logout(){
+  logout() {
+    localStorage.removeItem('id');
+    localStorage.removeItem('username');
+    localStorage.removeItem('name');
+    localStorage.removeItem('tipo');
+
     this.router.navigate(['login/profissional']);
   }
 }

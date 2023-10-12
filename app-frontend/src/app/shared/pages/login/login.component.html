@@ -13,7 +13,7 @@
     <div class="col">
 
       <div class="flex justify-content-center align-items-center">
-        <form [formGroup]="formLogin" (ngSubmit)="login()" class="form">
+        <form [formGroup]="formLogin"  class="form">
 
           <mat-card class="mat-elevation-z0">
 
@@ -58,11 +58,11 @@
             </mat-card-content>
             <div class="row">
               <div class="col">
-                <button mat-button color="warn" (click)="moduloProfissional()">Ir para o profissional</button>
+                <a mat-button color="warn" type="button" (click)="moduloProfissional()">Ir para o profissional</a>
               </div>
               <div class="col">
                 <div class="d-flex justify-content-end">
-                  <button type="submit" mat-raised-button color="primary">Login</button>
+                  <button type="submit" (click)="login()" mat-raised-button color="primary">Login</button>
                 </div>
               </div>
             </div>

@@ -104,12 +104,21 @@ export class LoginComponent implements OnInit {
     if (username) {
       username = username.trim();
     }
-    const reqObject = {
-      username: username,
-      password: password
-    };
 
-    this.router.navigate(['profissional/home'])
+
+    if(username === "paciente" && password === "123456"){
+
+      localStorage.setItem('id', '1');
+      localStorage.setItem('username', username);
+      localStorage.setItem('name', 'Paciente 01');
+      localStorage.setItem('tipo', 'paciente');
+
+      this.router.navigate(['paciente/home'])
+    }
+
+
+    this.message = "Crendeciais erradas"
+
   }
 
 

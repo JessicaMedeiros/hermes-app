@@ -23,8 +23,8 @@
 
             <mat-card-content>
               <div class="alerta">
-                <div class="alert alert-warning" role="alert" *ngIf="message" style="text-align: center;">
-                  {{message}}
+                <div class="alert alert-warning" role="alert" *ngIf="messageError" style="text-align: center;">
+                  {{messageError}}
                 </div> <br />
               </div>
 
@@ -34,7 +34,7 @@
                 <input formControlName="username" required matInput placeholder="nome.sobrenome"
                   oninput="this.value = this.value.toLowerCase()">
                 <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
-                <mat-hint>Digite: paciente </mat-hint>
+                <mat-hint>Digite: profissional1 ou profissional2. Para o caso de administrador, digite administrador </mat-hint>
               </mat-form-field>
 
 
@@ -47,7 +47,7 @@
                   <mat-icon tabindex="-1">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
                 <mat-error *ngIf="password.invalid">{{getErrorMessage()}}</mat-error>
-                <mat-hint>Digite: 123456
+                <mat-hint>Digite: 123456 (válido para qualquer usuário)
                 </mat-hint>
               </mat-form-field>
 
@@ -58,7 +58,7 @@
             </mat-card-content>
             <div class="row">
               <div class="col">
-                <button mat-button color="warn" (click)="moduloProfissional()">Ir para o Paciente</button>
+                <button mat-button color="warn" type="button" (click)="moduloPaciente()">Ir para o Paciente</button>
               </div>
               <div class="col">
                 <div class="d-flex justify-content-end">

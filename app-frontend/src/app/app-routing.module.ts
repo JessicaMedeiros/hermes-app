@@ -18,6 +18,8 @@ import { DetalheOcorrenciaComponent } from './modulos/paciente/pages/ocorrencia/
 import { ProfissionalComponent } from './modulos/profissional/profissional/profissional.component';
 import { HomeProssionalComponent } from './modulos/profissional/home/home.component';
 import { LoginProfissionalComponent } from './modulos/profissional/pages/login-profissional/login-profissional.component';
+import { GerenciarOcorrenciaComponent } from './modulos/profissional/pages/ocorrencia/gerenciar-ocorrencia/gerenciar-ocorrencia.component';
+import { ListaOcorrenciaComponent } from './modulos/profissional/pages/ocorrencia/lista-ocorrencia/lista-ocorrencia.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -83,6 +85,8 @@ const routes: Routes = [
       { path: '', component: HomeProssionalComponent },
       { path: 'home', component: HomeProssionalComponent },
       { path: 'bem-estar/diario', component: DiarioBemEstarComponent },
+      { path: 'gerenciar-ocorrencia/:id_ocorrencia', component: GerenciarOcorrenciaComponent },
+      { path: 'ocorrencias', component: ListaOcorrenciaComponent },
     ]
   }
 

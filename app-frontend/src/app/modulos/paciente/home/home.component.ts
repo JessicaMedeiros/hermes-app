@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  nome_paciente: string | null = ""
+
+  constructor() {
+    this.nome_paciente = localStorage.getItem('name')
+  }
 
   ngOnInit(): void {
   }

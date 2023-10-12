@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeProssionalComponent implements OnInit {
 
-  constructor() { }
+  name_profissional: string | null;
+
+  constructor() {
+    this.name_profissional = localStorage.getItem('name');
+   }
 
   ngOnInit(): void {
   }

@@ -13,7 +13,7 @@ export class ProfissionalSidebarComponent implements OnInit {
 
   isExpanded = true;
   logado?: boolean;
-
+  admin: boolean | null;
 
   clickEventSubscription!: Subscription;
   clickEventSubscriptionFecharMenuMobile!: Subscription;
@@ -22,7 +22,9 @@ export class ProfissionalSidebarComponent implements OnInit {
 
 
   constructor(   public router: Router,
-    private service: SharedService,) { }
+    private service: SharedService,) {
+      this.admin = localStorage.getItem('tipo') == 'admin'? true : false;
+     }
 
   ngOnInit(): void {
     this.clickEventSubscription = this.service.getClickEvent().subscribe((res) => {
@@ -34,33 +36,11 @@ export class ProfissionalSidebarComponent implements OnInit {
   }
 
   historicoOcorrencia(){
-    this.router.navigate(['paciente/ocorrencia/historico']);
+    this.router.navigate(['profissional/ocorrencias']);
   }
 
   inicial(){
     this.router.navigate(['profissional']);
   }
 
-  diarioBemEstar(){
-    this.router.navigate(['paciente/bem-estar/diario']);
-  }
-
-  criarNovoChat(){
-    this.router.navigate(['paciente/chat/novo']);
-  }
-
-  historicoChat(){
-    this.router.navigate(['paciente/chat/historico']);
-  }
-
-  inicialEducativo(){
-    this.router.navigate(['paciente/educativo']);
-  }
-
-  educativoVideos(){
-    this.router.navigate(['paciente/educativo/lista-videos']);
-  }
-  educativoArtigos(){
-    this.router.navigate(['paciente/educativo/lista-artigos']);
-  }
 }

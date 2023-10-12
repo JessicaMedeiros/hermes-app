@@ -20,14 +20,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatRadioModule } from '@angular/material/radio';
 
-import { MatMenuModule } from '@angular/material/menu';
+
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { HomeComponent } from './modulos/paciente/home/home.component';
 import { PacienteNavbarComponent } from './modulos/paciente/components/paciente-navbar/paciente-navbar.component';
 import { PacienteSidebarComponent } from './modulos/paciente/components/paciente-sidebar/paciente-sidebar.component';
@@ -40,7 +41,7 @@ import { PacienteComponent } from './modulos/paciente/paciente/paciente.componen
 import { PacienteChatComponent } from './modulos/paciente/pages/chat/paciente-chat/paciente-chat.component';
 import { HistoricoChatComponent } from './modulos/paciente/pages/chat/components/historico-chat/historico-chat.component';
 import { NovoChatComponent } from './modulos/paciente/pages/chat/components/novo-chat/novo-chat.component';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
 import { PacienteEducativoComponent } from './modulos/paciente/pages/educativo/paciente-educativo/paciente-educativo.component';
 import { ListaVideosComponent } from './modulos/paciente/pages/educativo/components/lista-videos/lista-videos.component';
 import { ListaArtigosComponent } from './modulos/paciente/pages/educativo/components/lista-artigos/lista-artigos.component';
@@ -55,6 +56,9 @@ import { NotificacaoOcorrenciasComponent } from './modulos/profissional/home/com
 import { NotificacaoBemEstarComponent } from './modulos/profissional/home/components/notificacao-bem-estar/notificacao-bem-estar.component';
 import { NotificacaoChatComponent } from './modulos/profissional/home/components/notificacao-chat/notificacao-chat.component';
 import { HomeProssionalComponent } from './modulos/profissional/home/home.component';
+import { GerenciarOcorrenciaComponent } from './modulos/profissional/pages/ocorrencia/gerenciar-ocorrencia/gerenciar-ocorrencia.component';
+import { InformacaoOcorrenciaComponent } from './shared/pages/ocorrencia/components/informacao-ocorrencia/informacao-ocorrencia.component';
+import { ListaOcorrenciaComponent } from './modulos/profissional/pages/ocorrencia/lista-ocorrencia/lista-ocorrencia.component';
 
 
 @NgModule({
@@ -85,7 +89,10 @@ import { HomeProssionalComponent } from './modulos/profissional/home/home.compon
     NotificacaoOcorrenciasComponent,
     NotificacaoBemEstarComponent,
     NotificacaoChatComponent,
-    HomeProssionalComponent
+    HomeProssionalComponent,
+    GerenciarOcorrenciaComponent,
+    InformacaoOcorrenciaComponent,
+    ListaOcorrenciaComponent,
   ],
   imports: [
     BrowserModule,
@@ -112,7 +119,8 @@ import { HomeProssionalComponent } from './modulos/profissional/home/home.compon
     MatExpansionModule,
     MatButtonToggleModule,
     MatDividerModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

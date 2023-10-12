@@ -10,7 +10,7 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div (click)="diarioBemEstar()">
+      <div>
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
@@ -31,7 +31,7 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div (click)="historicoChat()">
+      <div >
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
@@ -55,21 +55,13 @@
 
       <div (click)="historicoOcorrencia()">
         <button mat-button>
-          <!-- <button mat-button (click)="carregarTabelaComTipos(tipo, s.id_status)"> -->
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
           Novas solicitações (3)
         </button>
       </div>
-      <div (click)="historicoOcorrencia()">
-        <button mat-button>
-          <!-- <button mat-button (click)="carregarTabelaComTipos(tipo, s.id_status)"> -->
-          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
-          </mat-icon>
-          Em andamento (8)
-        </button>
-      </div>
-      <div (click)="historicoOcorrencia()">
+
+      <div>
         <button mat-button>
           <!-- <button mat-button (click)="carregarTabelaComTipos(tipo, s.id_status)"> -->
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
@@ -90,14 +82,14 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div (click)="historicoChat()">
+      <div>
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
           Novas solicitações (12)
         </button>
       </div>
-      <div (click)="historicoChat()">
+      <div>
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
@@ -105,7 +97,7 @@
         </button>
       </div>
 
-      <div (click)="historicoChat()">
+      <div >
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
@@ -126,7 +118,7 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div (click)="inicialEducativo()">
+      <div>
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
@@ -134,7 +126,7 @@
         </button>
       </div>
 
-      <div (click)="educativoArtigos()">
+      <div>
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
@@ -145,7 +137,7 @@
   </mat-accordion>
 
   <!-- ACESSO PARA ADMINISTRADOR -->
-  <mat-accordion class="mat-elevation-z1">
+  <mat-accordion class="mat-elevation-z1" *ngIf="admin">
     <mat-expansion-panel (opened)="panelOpenState = true" [expanded]="true" (closed)="false" class="mat-elevation-z0">
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -155,7 +147,7 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div (click)="inicialEducativo()">
+      <div >
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
@@ -163,7 +155,7 @@
         </button>
       </div>
 
-      <div (click)="educativoArtigos()">
+      <div >
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>

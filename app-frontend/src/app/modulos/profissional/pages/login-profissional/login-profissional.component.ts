@@ -17,20 +17,18 @@ export class LoginProfissionalComponent implements OnInit {
   formLogin!: FormGroup;
   isAdmin: any;
   hide = true;
-  user: any;
-  message!: any;
+  user: any;;
   isLoggedIn: boolean = false;
   username = new FormControl('', [Validators.required]);
   password = new FormControl('', [Validators.required]);
   REST_API!: string;
   mobile!: boolean;
+  messageError = "";
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private _location: Location,
-    private http: HttpClient,
-    private activatedRoute: ActivatedRoute,
     private breakpointObserver: BreakpointObserver,
   ) { }
 
@@ -96,25 +94,46 @@ export class LoginProfissionalComponent implements OnInit {
 
   login() {
     this.spinner = true;
-    const form = this.formLogin.value;
+    this.messageError = "";
 
     let username = this.formLogin.value.username;
     const password = this.formLogin.value.password;
-    const headers = new HttpHeaders({ 'Content-type': 'application/json' });
 
     if (username) {
       username = username.trim();
     }
-    const reqObject = {
-      username: username,
-      password: password
-    };
 
-    this.router.navigate(['profissional/home'])
+
+    if((username === "profissional1" && password === "123456") || (username === "profissional2" && password === "123456")){
+
+      var id = username === "profissional1"? '1' : '2';
+      var name = username === "profissional1"? 'Profissional 01' : 'Profissional 02';
+
+      localStorage.setItem('id', id);
+      localStorage.setItem('username', username);
+      localStorage.setItem('name', name);
+      localStorage.setItem('tipo', 'profissional');
+
+      this.router.navigate(['profissional/home'])
+    }
+
+    if(username === "administrador" && password === "123456"){
+
+      localStorage.setItem('id', '1');
+      localStorage.setItem('username', username);
+      localStorage.setItem('name', 'Administrador');
+      localStorage.setItem('tipo', 'admin');
+
+      this.router.navigate(['profissional/home'])
+    }
+
+
+    this.messageError = "Crendeciais erradas"
+
   }
 
 
-  moduloProfissional(){
-    this.router.navigate(['profissional/login'])
+  moduloPaciente(){
+    this.router.navigate(['login'])
   }
 }

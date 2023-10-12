@@ -1,30 +1,23 @@
-<mat-card id="card-main-informacoes">
-  <div class="row">
-    <div class="col">
-      <p> <strong> Sintomas: </strong>{{ocorrencia.sintomas}}</p>
-      <p> <strong>Medicamentos usados: </strong> {{ocorrencia.medicacao_desc}}</p>
+<app-informacao-ocorrencia></app-informacao-ocorrencia>
 
-      <p> <strong>Data ocorrência: </strong> {{ocorrencia.data_ocorrencia | date: 'dd/MM/yyyy'}} | <strong> Hora
-          ocorrência:</strong>
-        {{ocorrencia.hora_ocorrencia }}</p>
-
-    </div>
-    <div class="col-md-auto">
-      <mat-card
-        [ngClass]="{'card-status-ocorrencia_ativo': ocorrencia.ativa == true, 'card-status-ocorrencia_inativo': ocorrencia.ativa == false}">
-        {{ocorrencia.ativa? 'Ativa' : 'Encerrada'}}
-      </mat-card>
-    </div>
-  </div>
-
-  <div class="col-md-auto">
-    <p> Registrado em: {{ocorrencia.updated_at | date:'dd/MM/yyyy hh:mm a' }}</p>
-  </div>
-
-</mat-card>
-
-<section id="card-main-encerramento">
+<section id="card-main-encerramento" *ngIf="ocorrencia?.ativa">
   <div class="alert alert-light" role="alert">
     Aguarde enquanto um dos nossos profissionais está analisando a sua solicitação.
+  </div>
+</section>
+
+
+<section id="card-main-encerramento" *ngIf="!ocorrencia?.ativa">
+  <div class="alert alert-warning" role="alert">
+
+    <p> <strong>  Informações sobre o desfecho  da ocorrência: </strong>  {{ocorrencia.desfecho}}</p>
+    <p><strong> Ocorrência foi encerrada às {{ocorrencia.data_desfecho}}.</strong>   </p>
+    <mat-divider></mat-divider>
+
+    <h3>"Por gentileza, complete nossa pesquisa de satisfação sobre o atendimento prestado
+      por nossa equipe. Sua opinião é de extrema importância para a contínua melhoria de nossos serviços.</h3>
+    <div class="d-flex justify-content-center">
+      <button mat-raised-button color="accent"> Formulário</button>
+    </div>
   </div>
 </section>
