@@ -1,5 +1,7 @@
 <div *ngIf="isExpanded">
 
+
+
   <mat-accordion class="mat-elevation-z1">
     <mat-expansion-panel (opened)="panelOpenState = true" [expanded]="true" (closed)="false" class="mat-elevation-z0">
       <mat-expansion-panel-header (click)="inicial()">
@@ -9,14 +11,6 @@
           </mat-icon><span class="titulo-menu-principal">Página Inicial</span>
         </mat-panel-title>
       </mat-expansion-panel-header>
-
-      <div>
-        <button mat-button>
-          <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
-          </mat-icon>
-          Editar perfil
-        </button>
-      </div>
 
     </mat-expansion-panel>
   </mat-accordion>
@@ -31,7 +25,7 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div >
+      <div (click)="gerenciarBemEstar()">
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
@@ -53,15 +47,15 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div (click)="historicoOcorrencia()">
+      <div (click)="historicoOcorrencia('ativa')">
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
-          Novas solicitações (3)
+          Novas solicitações (2)
         </button>
       </div>
 
-      <div>
+      <div (click)="historicoOcorrencia('encerrada')">
         <button mat-button>
           <!-- <button mat-button (click)="carregarTabelaComTipos(tipo, s.id_status)"> -->
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
@@ -82,22 +76,22 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div>
+      <div (click)="chatsNovos()">
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
-          Novas solicitações (12)
+          Novas solicitações (2)
         </button>
       </div>
-      <div>
+      <div (click)="chatsEmAndamento()">
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
-          Em andamento (12)
+          Em andamento (5)
         </button>
       </div>
 
-      <div >
+      <div (click)="chatsEncerrados()">
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
@@ -118,7 +112,7 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div>
+      <div (click)="gerenciarVideos()">
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
@@ -126,7 +120,7 @@
         </button>
       </div>
 
-      <div>
+      <div (click)="gerenciarArtigos()">
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
@@ -147,7 +141,7 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div >
+      <div (click)="gerarRelatorios()">
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>
@@ -155,7 +149,7 @@
         </button>
       </div>
 
-      <div >
+      <div (click)="gerenciarUsuarios()">
         <button mat-button>
           <mat-icon mat-list-icon class="menu-icons" id="button-sidebar"> chevron_right
           </mat-icon>

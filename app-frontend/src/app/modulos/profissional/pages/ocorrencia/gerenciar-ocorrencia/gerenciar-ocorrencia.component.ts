@@ -33,21 +33,21 @@ export class GerenciarOcorrenciaComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
 
     this.admin = localStorage.getItem('tipo') == 'admin' ? true : false;
-    this.id_profissional = localStorage.getItem('id_profissional');
+    this.id_profissional = localStorage.getItem('id');
     this.username = localStorage.getItem('username');
 
     this.id_ocorrencia = this.ActivatedRoute.snapshot.paramMap.get('id_ocorrencia' as any);
 
     this.ocorrencia$ = this.refreshOcorrencia$
-    .pipe(switchMap(_ =>
-      this.service.buscarInformacoesSobreDesfechodaOcorrencia(this.id_ocorrencia)
-    ));
+      .pipe(switchMap(_ =>
+        this.service.buscarInformacoesSobreDesfechodaOcorrencia(this.id_ocorrencia)
+      ));
 
 
     this.ocorrencia$.subscribe({
       next: (res) => {
         this.ocorrencia = res;
-        this.editavel = this.ocorrencia.ativa? true : false;
+        this.editavel = this.ocorrencia.ativa ? true : false;
         console.log('----', this.ocorrencia)
         // this.loading = false;
       },
@@ -64,12 +64,14 @@ export class GerenciarOcorrenciaComponent implements OnInit, OnDestroy {
 
   }
 
-
+  message = ""
   atribuirProfissional() {
-
+    this.message = ""
     this.service.atribuirProfissionalaOcorrencia(this.id_ocorrencia, this.profissionalSelecionado)
       .subscribe({
         next: (res) => {
+          var nome = this.profissionalSelecionado == 1 ? 'Profissional 01' : 'Profissional 02'
+          this.message = "Atribuído ao profissional " + `${nome}` + " com sucesso";
           this.refreshOcorrencia$.next(true);
           console.log(res)
         }, error: (error) => {
@@ -91,7 +93,7 @@ export class GerenciarOcorrenciaComponent implements OnInit, OnDestroy {
       })
   }
 
-  atualizar(finalizar: boolean){
+  atualizar(finalizar: boolean) {
     this.service.salvarDesfecho(this.ocorrencia, finalizar)
       .subscribe({
         next: (res) => {
@@ -103,7 +105,7 @@ export class GerenciarOcorrenciaComponent implements OnInit, OnDestroy {
       })
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.refreshOcorrencia$.unsubscribe();
   }
 

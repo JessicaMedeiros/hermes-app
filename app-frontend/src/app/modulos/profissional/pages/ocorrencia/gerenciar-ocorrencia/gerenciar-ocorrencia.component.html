@@ -2,7 +2,11 @@
 
 <mat-card class="card-atribuicao-profissional" *ngIf="!admin">
   <h3> <strong>Associar ao profissional:</strong> </h3>
-  <mat-card-content *ngIf="ocorrencia.id_profissional != null">
+  <mat-card-content *ngIf="ocorrencia.id_profissional != null && ocorrencia.id_profissional != id_profissional">
+    Ocorrência atribuída a outro profissional
+  </mat-card-content>
+
+  <mat-card-content *ngIf="ocorrencia.id_profissional != null && ocorrencia.id_profissional == id_profissional">
     Ocorrência atribuída a você
   </mat-card-content>
   <mat-card-content *ngIf="ocorrencia.id_profissional  == null">
@@ -12,6 +16,9 @@
 
 
 <mat-card class="card-atribuicao-profissional" *ngIf="admin">
+  <div class="alert alert-success" role="alert" *ngIf="message">
+   {{message}}
+  </div>
   <h3> <strong>Associar ao profissional: </strong> </h3>
   <mat-card-content>
     <mat-form-field appearance="outline">

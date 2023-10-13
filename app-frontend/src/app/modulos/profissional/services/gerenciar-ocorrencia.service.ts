@@ -71,10 +71,10 @@ export class GerenciarOcorrenciaService {
 
   }
 
-  listaOcorrencia(){
+  listaOcorrencia(status: any){
     this.location()
 
-    let API_URL = `${this.REST_API}/api/ocorrencia/geral/buscar`;
+    let API_URL = `${this.REST_API}/api/ocorrencia/geral/buscar/${status}`;
 
     console.log('API_URL', API_URL)
 

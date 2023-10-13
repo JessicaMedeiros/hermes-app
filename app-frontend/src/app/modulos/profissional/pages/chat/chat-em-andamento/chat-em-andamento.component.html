@@ -1,0 +1,52 @@
+
+<div class="row" id="search-box">
+  <div class="col">
+    <mat-form-field class="full-width">
+      <mat-label>Pesquisar pelo paciente</mat-label>
+      <input type="text" matInput>
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+  <div class="col">
+    <button mat-raised-button color="primary">pesquisar</button>
+  </div>
+</div>
+
+<h2 class="titulo">Chats em andamento</h2>
+
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- id_chat Column -->
+  <ng-container matColumnDef="id_chat">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id_chat}} </td>
+  </ng-container>
+
+  <!-- iniciado Column -->
+  <ng-container matColumnDef="iniciado">
+    <th mat-header-cell *matHeaderCellDef> iniciado </th>
+    <td mat-cell *matCellDef="let element"> {{element.iniciado}} </td>
+  </ng-container>
+
+
+  <!-- ativo Column -->
+  <ng-container matColumnDef="ativo">
+    <th mat-header-cell *matHeaderCellDef> ativo </th>
+    <td mat-cell *matCellDef="let element"> {{element.ativo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="analisar">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let c">
+      <a>
+        <mat-icon class="options">
+          open_in_new</mat-icon>
+      </a>
+    </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

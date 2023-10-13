@@ -1,24 +1,24 @@
-const express=require("express");
-const cors=require("cors");
-const db=require('./query'); 
+const app = require("./src/app");
+const http = require("http");
+
+const db = require('./config/db'); 
 //our all the query connections are there in query.js
 const path = require('path');
-const app=express();
+
+const server = http.createServer(app);
 
 
-var distDir = __dirname + "/dist/";
-app.use(express.static(__dirname + '/public'));
-app.use(express.static(distDir));
-app.use(cors());
+const dotenv = require("dotenv");
+dotenv.config();
 
-var port =  3333
-app.use(express.json());
-// app.use(express.json({ type: 'application/vnd.api+json' }));
 
-app.use(express.urlencoded({ extended: true }));
-
-app.get('/',(request,response)=>{response.json({info:'Node.js,Express, and Postgres API'});
+app.get("/", function (req, res, next) {
+  res.render("index", { title: "Express" });
 });
-app.listen(port,()=>{
-console.log(`App running on port ${port}.`);
-})
+
+
+var port = process.env.PORT ||   3333 
+
+server.listen(port, () => {
+    console.log("Aplicação executando na porta ", port);
+  });

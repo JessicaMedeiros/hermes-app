@@ -35,12 +35,46 @@ export class ProfissionalSidebarComponent implements OnInit {
 
   }
 
-  historicoOcorrencia(){
-    this.router.navigate(['profissional/ocorrencias']);
+  historicoOcorrencia(status: string){
+    this.router.navigate(['profissional/ocorrencias', status]);
   }
 
   inicial(){
     this.router.navigate(['profissional']);
+  }
+
+  gerenciarBemEstar(){
+    this.router.navigate(['profissional/bem-estar/gerenciar']);
+  }
+
+
+  chatsNovos(){
+    this.router.navigate(['profissional/chat/novos']);
+  }
+
+  chatsEmAndamento(){
+    this.router.navigate(['profissional/chat/andamento']);
+  }
+
+  chatsEncerrados(){
+    this.router.navigate(['profissional/chat/encerrado']);
+  }
+
+
+  gerenciarVideos(){
+    this.router.navigate(['profissional/educativo/gerenciar-videos']);
+  }
+
+  gerenciarArtigos(){
+    this.router.navigate(['profissional/educativo/gerenciar-artigos']);
+  }
+
+  gerenciarUsuarios(){
+    this.router.navigate(['profissional/admin/gerenciar-usuario']);
+  }
+
+  gerarRelatorios(){
+    this.router.navigate(['profissional/admin/relatorios']);
   }
 
 }

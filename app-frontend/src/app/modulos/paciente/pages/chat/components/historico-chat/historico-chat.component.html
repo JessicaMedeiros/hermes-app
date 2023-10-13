@@ -1,1 +1,41 @@
-<p>historico-chat works!</p>
+<h2 class="titulo">Histórico de chats</h2>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- id_chat Column -->
+  <ng-container matColumnDef="id_chat">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id_chat}} </td>
+  </ng-container>
+
+  <!-- iniciado Column -->
+  <ng-container matColumnDef="iniciado">
+    <th mat-header-cell *matHeaderCellDef> iniciado </th>
+    <td mat-cell *matCellDef="let element"> {{element.iniciado}} </td>
+  </ng-container>
+
+  <!-- finalizado Column -->
+  <ng-container matColumnDef="finalizado">
+    <th mat-header-cell *matHeaderCellDef> finalizado </th>
+    <td mat-cell *matCellDef="let element"> {{element.finalizado}} </td>
+  </ng-container>
+
+  <!-- ativo Column -->
+  <ng-container matColumnDef="ativo">
+    <th mat-header-cell *matHeaderCellDef> ativo </th>
+    <td mat-cell *matCellDef="let element"> {{element.ativo}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="analisar">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let c">
+      <a>
+        <mat-icon class="options">
+          open_in_new</mat-icon>
+      </a>
+    </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

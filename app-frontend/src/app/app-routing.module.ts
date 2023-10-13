@@ -20,6 +20,14 @@ import { HomeProssionalComponent } from './modulos/profissional/home/home.compon
 import { LoginProfissionalComponent } from './modulos/profissional/pages/login-profissional/login-profissional.component';
 import { GerenciarOcorrenciaComponent } from './modulos/profissional/pages/ocorrencia/gerenciar-ocorrencia/gerenciar-ocorrencia.component';
 import { ListaOcorrenciaComponent } from './modulos/profissional/pages/ocorrencia/lista-ocorrencia/lista-ocorrencia.component';
+import { GerenciarArtigosComponent } from './modulos/profissional/pages/educativo/gerenciar-artigos/gerenciar-artigos.component';
+import { GerenciarVideosComponent } from './modulos/profissional/pages/educativo/gerenciar-videos/gerenciar-videos.component';
+import { GerenciarUsuarioComponent } from './modulos/administrador/pages/gerenciar-usuario/gerenciar-usuario.component';
+import { RelatoriosComponent } from './modulos/administrador/pages/relatorios/relatorios.component';
+import { GerenciarBemEstarComponent } from './modulos/profissional/pages/bem-estar/gerenciar-bem-estar/gerenciar-bem-estar.component';
+import { NovasSolicitacoesComponent } from './modulos/profissional/pages/chat/novas-solicitacoes/novas-solicitacoes.component';
+import { ChatEmAndamentoComponent } from './modulos/profissional/pages/chat/chat-em-andamento/chat-em-andamento.component';
+import { ChatEncerradoComponent } from './modulos/profissional/pages/chat/chat-encerrado/chat-encerrado.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -84,11 +92,22 @@ const routes: Routes = [
 
       { path: '', component: HomeProssionalComponent },
       { path: 'home', component: HomeProssionalComponent },
-      { path: 'bem-estar/diario', component: DiarioBemEstarComponent },
+      { path: 'bem-estar/gerenciar', component: GerenciarBemEstarComponent },
       { path: 'gerenciar-ocorrencia/:id_ocorrencia', component: GerenciarOcorrenciaComponent },
-      { path: 'ocorrencias', component: ListaOcorrenciaComponent },
+      { path: 'ocorrencias/:status', component: ListaOcorrenciaComponent },
+
+      { path: 'educativo/gerenciar-artigos', component: GerenciarArtigosComponent },
+      { path: 'educativo/gerenciar-videos', component: GerenciarVideosComponent },
+
+      { path: 'chat/novos', component: NovasSolicitacoesComponent },
+      { path: 'chat/andamento', component: ChatEmAndamentoComponent },
+      { path: 'chat/encerrado', component: ChatEncerradoComponent },
+
+      { path: 'admin/gerenciar-usuario', component: GerenciarUsuarioComponent },
+      { path: 'admin/relatorios', component: RelatoriosComponent },
     ]
-  }
+  },
+
 
 ];
 

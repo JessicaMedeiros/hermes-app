@@ -59,6 +59,14 @@ import { HomeProssionalComponent } from './modulos/profissional/home/home.compon
 import { GerenciarOcorrenciaComponent } from './modulos/profissional/pages/ocorrencia/gerenciar-ocorrencia/gerenciar-ocorrencia.component';
 import { InformacaoOcorrenciaComponent } from './shared/pages/ocorrencia/components/informacao-ocorrencia/informacao-ocorrencia.component';
 import { ListaOcorrenciaComponent } from './modulos/profissional/pages/ocorrencia/lista-ocorrencia/lista-ocorrencia.component';
+import { GerenciarVideosComponent } from './modulos/profissional/pages/educativo/gerenciar-videos/gerenciar-videos.component';
+import { GerenciarArtigosComponent } from './modulos/profissional/pages/educativo/gerenciar-artigos/gerenciar-artigos.component';
+import { GerenciarUsuarioComponent } from './modulos/administrador/pages/gerenciar-usuario/gerenciar-usuario.component';
+import { RelatoriosComponent } from './modulos/administrador/pages/relatorios/relatorios.component';
+import { GerenciarBemEstarComponent } from './modulos/profissional/pages/bem-estar/gerenciar-bem-estar/gerenciar-bem-estar.component';
+import { NovasSolicitacoesComponent } from './modulos/profissional/pages/chat/novas-solicitacoes/novas-solicitacoes.component';
+import { ChatEmAndamentoComponent } from './modulos/profissional/pages/chat/chat-em-andamento/chat-em-andamento.component';
+import { ChatEncerradoComponent } from './modulos/profissional/pages/chat/chat-encerrado/chat-encerrado.component';
 
 
 @NgModule({
@@ -93,6 +101,14 @@ import { ListaOcorrenciaComponent } from './modulos/profissional/pages/ocorrenci
     GerenciarOcorrenciaComponent,
     InformacaoOcorrenciaComponent,
     ListaOcorrenciaComponent,
+    GerenciarVideosComponent,
+    GerenciarArtigosComponent,
+    GerenciarUsuarioComponent,
+    RelatoriosComponent,
+    GerenciarBemEstarComponent,
+    NovasSolicitacoesComponent,
+    ChatEmAndamentoComponent,
+    ChatEncerradoComponent,
   ],
   imports: [
     BrowserModule,
