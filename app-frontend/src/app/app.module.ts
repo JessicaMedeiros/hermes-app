@@ -136,7 +136,8 @@ import { ChatEncerradoComponent } from './modulos/profissional/pages/chat/chat-e
     MatButtonToggleModule,
     MatDividerModule,
     MatProgressSpinnerModule,
-    MatRadioModule
+    MatRadioModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

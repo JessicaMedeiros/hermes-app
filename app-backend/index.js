@@ -7,14 +7,14 @@ const path = require('path');
 
 const server = http.createServer(app);
 
+app.get("/", function (req, res, next) {
+
+  res.render("index", { title: "Express" });
+});
+
 
 const dotenv = require("dotenv");
 dotenv.config();
-
-
-app.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
-});
 
 
 var port = process.env.PORT ||   3333 
