@@ -22,12 +22,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatListModule } from '@angular/material/list';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HomeComponent } from './modulos/paciente/home/home.component';
 import { PacienteNavbarComponent } from './modulos/paciente/components/paciente-navbar/paciente-navbar.component';
@@ -67,6 +66,7 @@ import { GerenciarBemEstarComponent } from './modulos/profissional/pages/bem-est
 import { NovasSolicitacoesComponent } from './modulos/profissional/pages/chat/novas-solicitacoes/novas-solicitacoes.component';
 import { ChatEmAndamentoComponent } from './modulos/profissional/pages/chat/chat-em-andamento/chat-em-andamento.component';
 import { ChatEncerradoComponent } from './modulos/profissional/pages/chat/chat-encerrado/chat-encerrado.component';
+import { MedicamentosComponent } from './modulos/paciente/pages/educativo/components/medicamentos/medicamentos.component';
 
 
 @NgModule({
@@ -109,6 +109,7 @@ import { ChatEncerradoComponent } from './modulos/profissional/pages/chat/chat-e
     NovasSolicitacoesComponent,
     ChatEmAndamentoComponent,
     ChatEncerradoComponent,
+    MedicamentosComponent,
   ],
   imports: [
     BrowserModule,
@@ -137,7 +138,7 @@ import { ChatEncerradoComponent } from './modulos/profissional/pages/chat/chat-e
     MatDividerModule,
     MatProgressSpinnerModule,
     MatRadioModule,
-
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

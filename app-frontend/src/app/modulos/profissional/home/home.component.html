@@ -1,13 +1,15 @@
 <h3>Olá, {{name_profissional}}. </h3>
 
-<section>
-  <app-notificacao-chat></app-notificacao-chat>
-</section>
+<div *ngIf="!admin">
+  <section>
+    <app-notificacao-chat></app-notificacao-chat>
+  </section>
 
-<section>
-  <app-notificacao-ocorrencias></app-notificacao-ocorrencias>
-</section>
+  <section>
+    <app-notificacao-ocorrencias></app-notificacao-ocorrencias>
+  </section>
 
-<section>
-  <app-notificacao-bem-estar></app-notificacao-bem-estar>
-</section>
+  <section>
+    <app-notificacao-bem-estar></app-notificacao-bem-estar>
+  </section>
+</div>

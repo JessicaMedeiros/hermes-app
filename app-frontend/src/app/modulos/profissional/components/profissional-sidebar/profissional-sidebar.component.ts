@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from 'src/app/shared/services/shared.service';
-import {Subscription} from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-profissional-sidebar',
@@ -21,10 +21,10 @@ export class ProfissionalSidebarComponent implements OnInit {
   panelOpenState = true;
 
 
-  constructor(   public router: Router,
+  constructor(public router: Router,
     private service: SharedService,) {
-      this.admin = localStorage.getItem('tipo') == 'admin'? true : false;
-     }
+    this.admin = localStorage.getItem('tipo') == 'admin' ? true : false;
+  }
 
   ngOnInit(): void {
     this.clickEventSubscription = this.service.getClickEvent().subscribe((res) => {
@@ -35,45 +35,45 @@ export class ProfissionalSidebarComponent implements OnInit {
 
   }
 
-  historicoOcorrencia(status: string){
+  historicoOcorrencia(status: string) {
     this.router.navigate(['profissional/ocorrencias', status]);
   }
 
-  inicial(){
+  inicial() {
     this.router.navigate(['profissional']);
   }
 
-  gerenciarBemEstar(){
+  gerenciarBemEstar() {
     this.router.navigate(['profissional/bem-estar/gerenciar']);
   }
 
 
-  chatsNovos(){
+  chatsNovos() {
     this.router.navigate(['profissional/chat/novos']);
   }
 
-  chatsEmAndamento(){
+  chatsEmAndamento() {
     this.router.navigate(['profissional/chat/andamento']);
   }
 
-  chatsEncerrados(){
+  chatsEncerrados() {
     this.router.navigate(['profissional/chat/encerrado']);
   }
 
 
-  gerenciarVideos(){
+  gerenciarVideos() {
     this.router.navigate(['profissional/educativo/gerenciar-videos']);
   }
 
-  gerenciarArtigos(){
+  gerenciarArtigos() {
     this.router.navigate(['profissional/educativo/gerenciar-artigos']);
   }
 
-  gerenciarUsuarios(){
+  gerenciarUsuarios() {
     this.router.navigate(['profissional/admin/gerenciar-usuario']);
   }
 
-  gerarRelatorios(){
+  gerarRelatorios() {
     this.router.navigate(['profissional/admin/relatorios']);
   }
 

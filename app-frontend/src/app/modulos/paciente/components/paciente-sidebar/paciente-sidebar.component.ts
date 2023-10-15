@@ -64,7 +64,12 @@ export class PacienteSidebarComponent implements OnInit {
   educativoVideos(){
     this.router.navigate(['paciente/educativo/lista-videos']);
   }
+
   educativoArtigos(){
     this.router.navigate(['paciente/educativo/lista-artigos']);
+  }
+
+  educativosMedicamento(){
+    this.router.navigate(['paciente/educativo/medicamentos']);
   }
 }

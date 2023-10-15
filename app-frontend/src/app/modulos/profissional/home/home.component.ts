@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomeProssionalComponent implements OnInit {
 
   name_profissional: string | null;
+  admin!: boolean;
 
   constructor() {
     this.name_profissional = localStorage.getItem('name');
+    this.admin = localStorage.getItem('tipo') == 'admin'? true : false;
    }
 
   ngOnInit(): void {

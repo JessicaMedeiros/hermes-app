@@ -28,6 +28,7 @@ import { GerenciarBemEstarComponent } from './modulos/profissional/pages/bem-est
 import { NovasSolicitacoesComponent } from './modulos/profissional/pages/chat/novas-solicitacoes/novas-solicitacoes.component';
 import { ChatEmAndamentoComponent } from './modulos/profissional/pages/chat/chat-em-andamento/chat-em-andamento.component';
 import { ChatEncerradoComponent } from './modulos/profissional/pages/chat/chat-encerrado/chat-encerrado.component';
+import { MedicamentosComponent } from './modulos/paciente/pages/educativo/components/medicamentos/medicamentos.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -78,6 +79,9 @@ const routes: Routes = [
           },
           {
             path: 'lista-artigos', component: ListaArtigosComponent,
+          },
+          {
+            path: 'medicamentos', component: MedicamentosComponent,
           }
         ]
       }
